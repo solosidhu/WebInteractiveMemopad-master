@@ -1,0 +1,87 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Interactive Memopad</title>
+
+    <!-- google fonts cdn link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header>
+    <div id="menu" class="fas fa-bars"></div>
+    <a href="{% url 'index' %}" class="logo"><i class="fas fa-book-reader"></i> Web Interactive Memopad</a>
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'signup' %}">User Signup</a></li>
+            <li><a href="{% url 'login' %}">User Login</a></li>
+            <li><a href="{% url 'login_admin' %}">Admin Login</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- header section ends -->
+
+<!-- home section starts  -->
+<section class="home" id="home">
+    <div class="content" style="background-image: url(static/images/note8.jpg);">
+        <h1 style="font-size:20px; text-align: center;color: rgb(255, 255, 255);">WI Memo pad: a notes handler <p style="font-size:11px;color: rgb(249, 249, 255);">classrooms. Bussinesses. groups.</p1> </h1>
+    </div>
+        <div class="content" style="background-image: url(static/images/note5.jpg);">
+        <p style="font-size:18px;text-align: center;color: rgb(81, 81, 81);" >Welcome to our project <i class="fas fa-hard-hat"></i>site.<i class="fas fa-tools"></i> <p style="font-size:16px;text-align: justify;" >all features will be updated in the future. teacher's notes sharing with classmates became easy!. Try our new under construction <i class="fas fa-hammer"></i><i class="fas fa-paint-roller"></i>  site by <a href="{% url 'login' %}" style="color: rgb(255, 0, 0);">log~in.</a>if you are new click <a href="{% url 'signup' %}" style="color: rgb(255, 0, 0);">sign-up</a> -to get-in</p> 
+        <p style="font-size:10px;color: rgb(228, 0, 213);" >* by "signing-up" you agree to take full responsibility for whatever the losses occured/may occur to you.--W.I.MemoPad-Nithish S Kumaran.[20BCAR0116].BCA(CTIS).sem-6-Project.--</p>
+        <a href="{% url 'signup' %}"><input type="submit" class="btn"  style="color: rgb(255, 255, 255);" value="Signup"></a>
+        <br>
+    </div>
+
+</section>
+<!-- home section ends -->
+<!-- footer section starts  -->
+<div class="footer">
+    <div class="box-container">
+        <div class="box">
+            <a style="font-size: 18px;">We have no other branches</a>
+            <a style="font-size: 15px;">Enguluku veru engum kilaigal illai</a>
+        </div>
+
+        <div class="box">
+            <a style="font-size: 18px;">quick links</a>
+            <a href="{% url 'index' %}">home</a>
+            <a href="{% url 'about' %}">about</a>
+            <a href="{% url 'contact' %}">contact</a>
+       </div>
+
+        <div class="box">
+            <a style="font-size: 18px;">Contact info:</a>
+            <p> <i class="fas fa-map-marker-alt"></i> Jayanagar 9th block,Jain University,Bengaluru-560069. </p>
+            <p> <i class="fas fa-envelope"></i>nithishkumaran1@gmail.com </p>
+            <p> <i class="fas fa-phone"></i> +91 936notyou;) </p>
+        </div>
+    </div>
+    <h1 class="credit">------------------------- Nithish Kumaran S--- 20BCAR0116 -------------------------</h1>
+</div>
+<!-- footer section ends -->
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

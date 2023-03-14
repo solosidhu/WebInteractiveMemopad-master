@@ -1,0 +1,61 @@
+{% extends 'navigation.html'%}
+{% load static %}
+{% block body %}
+
+{% ifequal error "no" %}
+     <script>
+	   alert('Signup Successfull');
+	   window.location=('{% url 'login' %}');
+     </script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+     <script>
+	    alert('Something went wrong, Try Again');
+     </script>
+{% endifequal %}
+<br><br><br><br><br>
+<section class="signup" id="signup" style="background-color: azure;">
+<h1 class="heading" style="color: black;">User Signup Form</h1>
+
+<div class="row">
+					<form method="post" style="background-color: aliceblue">
+							{% csrf_token %}
+							        <label for="firstname" style="font-size: 17px">Firstname as per *id:<br>
+									<input type="text" style="color: rgb(0, 0, 0);background-color: rgb(255, 255, 255);" placeholder="Enter First Name" class="box" name="firstname" required><br>
+							        <label for="lastname" style="font-size: 17px">Lastname:<br>
+									<input type="text" style="color: black;background-color: rgb(255, 255, 255);" placeholder="Enter Last Name" class="box" name="lastname" required><br>
+									<label for="contact" style="font-size: 17px">Mobile number (+91):<br>
+									<input type="number" style="color: black;background-color: rgb(255, 255, 255);" placeholder="Enter Contact Number" class="box"name="contact" required><br>
+									<label for="emailid" style="font-size: 17px">email (college id-if student):<br>
+									<input type="email" style="color: black;background-color: rgb(255, 255, 255);"placeholder="Enter Email Address" class="box" name="emailid" required><br>
+									<label for="password" style="font-size: 17px">password must be atleast 8 charecters long. *should not contain your username/number(123).<br>
+									<input type="password" style="color: black;background-color: rgb(255, 255, 255);" placeholder="Password" class="box" name="password" required><br>								
+									<label for="branch" style="font-size: 17px">Educational branch:<br>
+									<select name="branch" class="box" style="color: rgb(113, 113, 113);background-color:rgb(255, 255, 255)"><br>
+                                      <option value="">--- Select Branch ---</option>
+									  <option value="Computer Science">Computer Science</option>
+									  <option value="Mechanical">Mechanical</option>
+									  <option value="Civil">Civil</option>
+									  <option value="Electronics">Electronics</option>
+									  <option value="Electric">Electric</option>
+									  <option value="IT">IT</option>
+									</select><br>
+									<label for="role" style="font-size: 17px">Role:<br>
+									<select name="role" class="box" style="color: rgb(112, 112, 112);background-color : rgb(255, 255, 255)"><br>
+                                        <option value="">--- Role ---</option>
+										<option value="Student">Student</option>
+										<option value="Teacher">Teacher</option>
+									</select></label></label></label></label></label></label></label>
+								<hr>
+								<p style="color:blueviolet;font-size: 1.25rem;"><br>*by "signing-up" you agree to take full responsibility for whatever the losses occured/may occur to you. </a></p>
+								<input type="submit" class="btn btn-primary mt-2" style="color: rgb(255, 255, 255);" value="SIGN-UP for Memopad">
+                            </form>
+                       <div class="image" style="background-color: azure;">
+                          <img src="{% static 'images/Taking notes-amico.png' %}" alt="">
+                       </div>
+				</div>
+
+</section>
+
+{% endblock %}

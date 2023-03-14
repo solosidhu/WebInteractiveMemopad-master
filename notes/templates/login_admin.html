@@ -1,0 +1,39 @@
+{% extends 'navigation.html'%}
+{% load static %}
+{% block body %}
+
+{% ifequal error "no" %}
+<script>
+	alert('Logged In Successfully...');
+	window.location=('{% url 'admin_home' %}')
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+	alert('Invalid Login Credentials, Try Again');
+</script>
+
+{% endifequal %}
+
+<br><br><br><br><br>
+<section class="adminlog" id="adminlog" style="background-color:azure;">
+<h1 class="heading mt-5" style="color: black;">Admin Login</h1>
+
+<div class="row">
+    <div class="image">
+        <img src="{% static 'images/Kids Studying from Home-rafiki.png' %}" alt="">
+    </div>
+    <form method="post" style="background-color:aliceblue;">
+        {% csrf_token %}
+        <label for="uname" style="font-size: 17px">Admin username:
+		<input style="color: black;background-color: white;" type="text" placeholder="Enter Username" name="uname" class="box"> 
+        <label for="uname" style="font-size: 17px">*Password:
+        <input style="color: black;background-color: white;" type="password" placeholder="Enter Password" name="pwd" class="box"></label></label>
+        <p style="color:blueviolet;font-size: 1.25rem;">*are you a teacher? want admin account? rise query in <a href="{% url 'contact' %}" style="color: rgb(255, 0, 0);"> contact form </a>for account creation</p>
+		<input type="submit" class="btn" style="color: rgb(255, 255, 255);" value="Let Master in">
+    </form>
+</div>
+</section>
+
+{% endblock %}
